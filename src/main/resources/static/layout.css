@@ -6,6 +6,10 @@
     border-radius: 1rem;
 }
 
+h1 {
+    text-align: center;
+}
+
 .searchbar {
     display: flex;
     flex-direction: row-reverse;
@@ -14,15 +18,14 @@
     padding: 2rem;
 }
 
-h1 {
-    text-align: center;
-}
-
 .card {
     border-radius: 1rem;
     text-align: center;
     padding: 1rem;
 }
+
+
+/* We probably do want to crop and adjust these images so they're at least the same aspect ratio */
 
 .card img {
     width: 100%;
