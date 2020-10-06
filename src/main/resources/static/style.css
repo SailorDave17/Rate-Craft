@@ -1,0 +1,24 @@
+:root {
+    --light-blue: #9cfffaff;
+    --dark-burgundy: #32161fff;
+    --highlight: #ff6978ff;
+    --light-grey: rgb(164, 168, 231);
+    --dark-grey: #56667aff;
+}
+
+html {
+    background-image: linear-gradient(to bottom, var(--light-grey), var(--dark-grey));
+}
+
+.main-cards {
+    background-color: var(--light-grey);
+}
+
+.card a:link {
+    text-decoration: none;
+    color: var(--dark-burgundy);
+}
+
+.card {
+    background-color: var(--light-blue);
+}
