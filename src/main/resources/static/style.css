@@ -8,6 +8,8 @@
 
 html {
     background-image: linear-gradient(to bottom, var(--light-grey), var(--dark-grey));
+    min-height: 100vh;
+    font-family: sans-serif;
 }
 
 .main-cards {

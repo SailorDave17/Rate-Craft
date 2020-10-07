@@ -1,4 +1,4 @@
-.main-cards {
+ .main-cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
@@ -10,10 +10,10 @@ h1 {
     text-align: center;
 }
 
-.searchbar {
+.navbar {
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     padding: 2rem;
 }
