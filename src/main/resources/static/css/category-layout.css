@@ -1,0 +1,31 @@
+h1 {
+    text-align: center;
+}
+
+.home-button {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2rem;
+}
+
+.home-button img {
+    width: 3rem;
+}
+
+.photostack {
+    width: 95vw;
+}
+
+.photostack ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.photostack img {
+    height: 10rem;
+    border-radius: 7px;
+}

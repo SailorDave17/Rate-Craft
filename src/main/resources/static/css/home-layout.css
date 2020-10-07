@@ -1,4 +1,4 @@
- .main-cards {
+.main-cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
@@ -10,10 +10,10 @@ h1 {
     text-align: center;
 }
 
-.navbar {
+.searchbar {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
     align-items: center;
     padding: 2rem;
 }
@@ -25,7 +25,7 @@ h1 {
 }
 
 
-/* We probably do want to crop and adjust these images so they're at least the same aspect ratio */
+/* We probably do want to crop and adjust these images so they're at least the same 16:9 aspect ratio */
 
 .card img {
     width: 100%;
