@@ -10,12 +10,15 @@ h1 {
     text-align: center;
 }
 
-.searchbar {
+.left-side-content{
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
-    padding: 2rem;
+    align-items: flex-start;
+    margin-top: 4rem;
+}
+.hashtag-cloud ul{
+    list-style-type: none;
 }
 
 .card {
@@ -30,4 +33,24 @@ h1 {
 .card img {
     width: 100%;
     border-radius: 7px;
+}
+.right-side-content{
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.review-form{
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1rem;
+}
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }

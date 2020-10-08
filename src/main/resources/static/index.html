@@ -11,20 +11,51 @@
 
 <body>
     <header class="page-header">
-        <h1>RateCraft</h1>
+        
         <div class="navbar">
-            <div class="hashtag-cloud">
-                <ul>
-                    <li><a href="./hashtags/cruisers.html">#cruisers</a></li>
-                    <li><a href="./hashtags/daysailors.html">#daysailors</a></li>
-                    <li><a href="./hashtags/racers.html">#racers</a></li>
-                    <li><a href="./hashtags/seagoing.html">#seagoing</a></li>
-                </ul>
+            <div class="left-side-content">
+                <form action="#" class="searchbox">
+                    <input type="text" placeholder="Search" name="search">
+                    <button type="submit">Go</button>
+                </form>
+
+                <div class="hashtag-cloud">
+                    <ul>
+                        <li><a href="./hashtags/cruisers.html">#cruisers</a></li>
+                        <li><a href="./hashtags/daysailors.html">#daysailors</a></li>
+                        <li><a href="./hashtags/racers.html">#racers</a></li>
+                        <li><a href="./hashtags/seagoing.html">#seagoing</a></li>
+                    </ul>
+
+                </div>
+
+                
             </div>
-            <form action="#" class="search spacer">
-                <input type="text" placeholder="Search" name="search">
-                <button type="submit">Go</button>
-            </form>
+            <h1>RateCraft</h1>
+            <div class="right-side-content">
+                
+                <form action="#" class="review-form">
+                    <h3 class="review-form-header">Submit a Review</h3>
+                    <label for="boat-type">Boat Type</label>
+                    <select name="btype" id="boat-type-id">
+                        <option value="catamaran">Catamaran</option>
+                        <option value="dinghy">Dinghy</option>
+                        <option value="motorsailer">Motorsailer</option>
+                        <option value="historic">Historic</option>
+                    </select>
+                    <label for="boat-usage">Boat Usage</label><select name="btype" id="boat-type-id">
+                        <option value="cruiser">Cruiser</option>
+                        <option value="daysailor">Daysailor</option>
+                        <option value="racer">Racer</option>
+                        <option value="seagoing">Seagoing</option>
+                    </select>
+                    <label for="boat-make">Make</label>
+                    <input type="text" id="bmakename" name="bmakename">
+                    <label for="boat-model">Boat Model</label>
+                    <input type="text" id="bmodelname" name="bmodelname">
+                    <button type="submit">Go</button>
+                </form>
+            </div>
         </div>
     </header>
     <main>
@@ -32,25 +63,30 @@
             <div class="card">
                 <a href="./vessels/catamaran/">Catamaran
                     <img src="./img/catamaran-photo_cropped.jpg" alt="Photo of a catamaran" class="card-image">
-                    <p class="description">In posuere aliquet nibh congue iaculis. Ut eu purus turpis. Mauris vitae faucibus lectus. Integer ornare nunc sed euismod varius.</p>
+                    <p class="description">In posuere aliquet nibh congue iaculis. Ut eu purus turpis. Mauris vitae
+                        faucibus lectus. Integer ornare nunc sed euismod varius.</p>
                 </a>
             </div>
             <div class="card">
                 <a href="./vessels/dinghy/">Dinghy
-                <img src="./img/dinghy-photo_cropped.jpg" alt="Photo of a dinghy" class="card-image">
-                <p class="description">In posuere aliquet nibh congue iaculis. Ut eu purus turpis. Mauris vitae faucibus lectus. Integer ornare nunc sed euismod varius.</p>
+                    <img src="./img/dinghy-photo_cropped.jpg" alt="Photo of a dinghy" class="card-image">
+                    <p class="description">In posuere aliquet nibh congue iaculis. Ut eu purus turpis. Mauris vitae
+                        faucibus lectus. Integer ornare nunc sed euismod varius.</p>
                 </a>
             </div>
             <div class="card">
                 <a href="./vessels/motorsailer/">Motorsailer
-                <img src="./img/motorsailer-photo_cropped.jpg" alt="Photo of a motorsailer" class="card-image">
-                <p class="description">In posuere aliquet nibh congue iaculis. Ut eu purus turpis. Mauris vitae faucibus lectus. Integer ornare nunc sed euismod varius.</p>
+                    <img src="./img/motorsailer-photo_cropped.jpg" alt="Photo of a motorsailer" class="card-image">
+                    <p class="description">In posuere aliquet nibh congue iaculis. Ut eu purus turpis. Mauris vitae
+                        faucibus lectus. Integer ornare nunc sed euismod varius.</p>
                 </a>
             </div>
             <div class="card">
                 <a href="./vessels/historic/">Historic
-                <img src="./img/dutch_man-o-war-photo_cropped.jpg" alt="Needed: Crew of fifty strapping lads from the colonies." class="card-image">
-                <p class="description">In posuere aliquet nibh congue iaculis. Ut eu purus turpis. Mauris vitae faucibus lectus. Integer ornare nunc sed euismod varius.</p>
+                    <img src="./img/dutch_man-o-war-photo_cropped.jpg"
+                        alt="Needed: Crew of fifty strapping lads from the colonies." class="card-image">
+                    <p class="description">In posuere aliquet nibh congue iaculis. Ut eu purus turpis. Mauris vitae
+                        faucibus lectus. Integer ornare nunc sed euismod varius.</p>
                 </a>
             </div>
         </div>
