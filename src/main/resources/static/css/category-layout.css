@@ -29,3 +29,9 @@ h1 {
     height: 10rem;
     border-radius: 7px;
 }
+
+.photostack h3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
