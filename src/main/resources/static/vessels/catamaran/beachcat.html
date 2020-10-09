@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
 
 <head>
@@ -25,7 +25,7 @@
         <div class="review">
             <div class="craft-score">
                 <ul>
-                    <li>Speed: </li>
+                    <li th:text="'Speed: ' + ${ReviewData.speed}"></li>
                     <li>Comfort: </li>
                     <li>Multi-day trip suitability: </li>
                     <li>Cool-factor: </li>
