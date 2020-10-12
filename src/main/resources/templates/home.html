@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RateCraft</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/home-layout.css">
+</head>
+
+<body>
+    <header class="page-header">
+        
+        <div class="navbar">
+            <div class="left-side-content">
+                <form action="#" class="searchbox">
+                    <input type="text" placeholder="Search" name="search">
+                    <button type="submit">Go</button>
+                </form>
+
+                <div class="hashtag-cloud">
+                    <ul>
+                        <li><a href="./hashtags/cruisers.html">#cruisers</a></li>
+                        <li><a href="./hashtags/daysailors.html">#daysailors</a></li>
+                        <li><a href="./hashtags/racers.html">#racers</a></li>
+                        <li><a href="./hashtags/seagoing.html">#seagoing</a></li>
+                    </ul>
+
+                </div>
+
+                
+            </div>
+            <h1>RateCraft</h1>
+            <div class="right-side-content">
+                
+                <form action="#" class="review-form">
+                    <h3 class="review-form-header">Submit a Review</h3>
+                    <label for="boat-type">Boat Type</label>
+                    <select name="btype" id="boat-type-id">
+                        <option value="catamaran">Catamaran</option>
+                        <option value="dinghy">Dinghy</option>
+                        <option value="motorsailer">Motorsailer</option>
+                        <option value="historic">Historic</option>
+                    </select>
+                    <label for="boat-usage">Boat Usage</label><select name="btype" id="boat-type-id">
+                        <option value="cruiser">Cruiser</option>
+                        <option value="daysailor">Daysailor</option>
+                        <option value="racer">Racer</option>
+                        <option value="seagoing">Seagoing</option>
+                    </select>
+                    <label for="boat-make">Make</label>
+                    <input type="text" id="bmakename" name="bmakename">
+                    <label for="boat-model">Boat Model</label>
+                    <input type="text" id="bmodelname" name="bmodelname">
+                    <button type="submit">Go</button>
+                </form>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="main-cards">
+            <div th:each = "Type: ${boatType}" class="card">
+                <a th:text="${boatType.name}" th:href="'vessels/' + ${boatType.id}">Catamaran
+                    <img th:src="'img/' + ${boatType.name} + '-photo_cropped.jpg'" th:alt="'Photo of a ' + ${boatType.name}" class="card-image">
+                </a>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
