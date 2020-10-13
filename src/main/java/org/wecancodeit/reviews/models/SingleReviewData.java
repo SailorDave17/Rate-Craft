@@ -1,8 +1,21 @@
 package org.wecancodeit.reviews.models;
 
-public class ReviewData {
 
-    private BoatType boatType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+@Entity
+public class SingleReviewData {
+    protected SingleReviewData() {}
+
+    @Id
+    @GeneratedValue
+    private long id;
+    @ManyToOne
+
+    private SingleBoat singleBoat;
     private int speed;
     private int comfort;
     private int multiDayTripSuitability;
@@ -10,8 +23,8 @@ public class ReviewData {
     private int price;
     private int practicality;
 
-    public ReviewData(BoatType boatType,int speed, int comfort, int multiDayTripSuitability, int coolFactor, int price, int practicality) {
-        this.boatType = boatType;
+    public SingleReviewData(SingleBoat singleBoat, int speed, int comfort, int multiDayTripSuitability, int coolFactor, int price, int practicality) {
+        this.singleBoat = singleBoat;
         this.speed = speed;
         this.comfort = comfort;
         this.multiDayTripSuitability = multiDayTripSuitability;
@@ -20,7 +33,7 @@ public class ReviewData {
         this.practicality = practicality;
     }
 
-    public BoatType getBoatType() { return boatType; }
+    public SingleBoat getBoatType() { return singleBoat; }
     public int getSpeed(){
         return speed;
     }
