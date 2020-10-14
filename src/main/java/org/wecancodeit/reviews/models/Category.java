@@ -7,23 +7,23 @@ import javax.persistence.OneToMany;
 import java.util.Collection;
 
 @Entity
-public class SingleBoat {
+public class Category {
 
     @Id
     @GeneratedValue
     private long id;
     private String name;
-    @OneToMany(mappedBy = "singleBoat")
-    private Collection<SingleReviewData> reviews;
+    @OneToMany(mappedBy = "category")
+    private Collection<Review> reviews;
 
-    protected SingleBoat(){}
+    protected Category(){}
 
-    public SingleBoat(String name) {
+    public Category(String name) {
         this.name = name;
     }
 
     public long getId() { return id; }
     public String getName() { return name; }
-    public Collection<SingleReviewData> getReviews() { return reviews; }
+    public Collection<Review> getReviews() { return reviews; }
 
 }

@@ -4,22 +4,22 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.wecancodeit.reviews.storage.SingleReviewDataStorage;
+import org.wecancodeit.reviews.storage.ReviewStorage;
 
 @Controller
-public class SingleReviewDataController {
+public class ReviewController {
 
-    private SingleReviewDataStorage singleReviewDataStorage;
+    private ReviewStorage reviewStorage;
 
-    public SingleReviewDataController(SingleReviewDataStorage singleReviewDataStorage){
+    public ReviewController(ReviewStorage reviewStorage){
 
-        this.singleReviewDataStorage = singleReviewDataStorage;
+        this.reviewStorage = reviewStorage;
     }
 
     @RequestMapping("review/{id}")
     public String showSingleReviewData(Model model, @PathVariable long id){
 
-        model.addAttribute("singleReviewData", singleReviewDataStorage.singleReviewDataStorageById(id));
+        model.addAttribute("review", reviewStorage.reviewStorageById(id));
 
         return "reviews";
     }
