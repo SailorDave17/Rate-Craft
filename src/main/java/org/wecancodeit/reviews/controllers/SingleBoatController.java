@@ -18,8 +18,9 @@ public class SingleBoatController {
         return "home";
     }
     @RequestMapping("/types/{id}")
-    public String displayTypePage(Model model){
-        model.addAttribute("singleReview", singleReviewStorage.retrieveAllReviews());
+    public String displayTypePage(Model model) {
+        model.addAttribute("singleBoat", singleBoatStorage.retrieveAllBoats());
+        return "single boat";
     }
 
 

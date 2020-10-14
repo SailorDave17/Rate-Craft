@@ -15,12 +15,11 @@ public class SingleBoat {
     private String name;
     @OneToMany(mappedBy = "singleBoat")
     private Collection<SingleReviewData> reviews;
+
     protected SingleBoat(){}
 
-    public SingleBoat(long id, String name, Collection<SingleReviewData> reviews) {
-        this.id = id;
+    public SingleBoat(String name) {
         this.name = name;
-        this.reviews = reviews;
     }
 
     public long getId() { return id; }
