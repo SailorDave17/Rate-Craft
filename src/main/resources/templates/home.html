@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -60,9 +60,9 @@
     </header>
     <main>
         <div class="main-cards">
-            <div th:each = "Type: ${boatType}" class="card">
-                <a th:text="${boatType.name}" th:href="'vessels/' + ${boatType.id}">Catamaran
-                    <img th:src="'img/' + ${boatType.name} + '-photo_cropped.jpg'" th:alt="'Photo of a ' + ${boatType.name}" class="card-image">
+            <div th:each = "category: ${categories}" class="card">
+                <a th:href="'vessels/' + ${category.id}"><p th:text="${category.name}">Catamaran</p>
+                    <img th:src="'img/' + ${category.name} + '-photo_cropped.jpg'" th:alt="'Photo of a ' + ${category.name}" class="card-image">
                 </a>
             </div>
         </div>

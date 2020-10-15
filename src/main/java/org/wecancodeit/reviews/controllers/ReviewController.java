@@ -19,7 +19,7 @@ public class ReviewController {
     @RequestMapping("review/{id}")
     public String showSingleReviewData(Model model, @PathVariable long id){
 
-        model.addAttribute("review", reviewStorage.reviewStorageById(id));
+        model.addAttribute("review", reviewStorage.retrieveReviewById(id));
 
         return "reviews";
     }
