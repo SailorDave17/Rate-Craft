@@ -7,7 +7,8 @@ import org.wecancodeit.reviews.models.Review;
 @Service
 public class ReviewStorage {
     public Review reviewStorageById(long id) {
-        return new Review(new Category("Catamaran" ), "Jameson Shipworks", "Battlestation", "Give me fuel, give me fire, give me that which I desire!");
+        return new Review(new Category("Catamaran" ), "Jameson Shipworks", "Battlestation",
+                "Give me fuel, give me fire, give me that which I desire!");
 
     }
 }
