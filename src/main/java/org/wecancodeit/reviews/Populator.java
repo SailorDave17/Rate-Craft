@@ -31,6 +31,8 @@ public class Populator implements CommandLineRunner {
 
         Review sampleReviewOne = new Review(catamaran, "Ford", "Prius", "Yes, you are reading this right, that is a Ford Prius Sailboat. Get over it.");
 
+        reviewStorage.addReview(sampleReviewOne);
+
 
     }
 

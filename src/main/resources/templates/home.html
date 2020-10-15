@@ -61,7 +61,7 @@
     <main>
         <div class="main-cards">
             <div th:each = "category: ${categories}" class="card">
-                <a th:href="'vessels/' + ${category.id}"><p th:text="${category.name}">Catamaran</p>
+                <a th:href="'category/' + ${category.id}"><p th:text="${category.name}">Catamaran</p>
                     <img th:src="'img/' + ${category.name} + '-photo_cropped.jpg'" th:alt="'Photo of a ' + ${category.name}" class="card-image">
                 </a>
             </div>

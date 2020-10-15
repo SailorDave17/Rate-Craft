@@ -19,7 +19,7 @@ public class CategoryController {
         model.addAttribute("categories", categoryStorage.retrieveAllCategories());
         return "home";
     }
-    @RequestMapping("/categories/{id}")
+    @RequestMapping("/category/{id}")
     public String displayTypePage(Model model) {
         model.addAttribute("reviews", reviewStorage.retrieveAllReviews());
         return "category";

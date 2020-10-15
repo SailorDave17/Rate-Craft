@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -20,7 +20,7 @@
     <div class="main">
         <div class="reviews">
             <ul>
-                <li th:each = "${singleBoat}">Chrysler Man'o'war</li>
+                <li th:each = "${reviews}">Chrysler Man'o'war</li>
             </ul>
         </div>
 <!--        <div class="photostack">-->

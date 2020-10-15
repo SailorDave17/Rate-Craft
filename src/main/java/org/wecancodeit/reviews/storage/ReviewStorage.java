@@ -1,6 +1,7 @@
 package org.wecancodeit.reviews.storage;
 
 import org.springframework.stereotype.Service;
+import org.wecancodeit.reviews.models.Category;
 import org.wecancodeit.reviews.models.Review;
 
 import java.util.Optional;
@@ -27,7 +28,9 @@ public class ReviewStorage {
             return retrievedReview;
         }
         else{
-            return null;
+            Category nullCategory = new Category("NullCat");
+            Review nullReview = new Review(nullCategory, "", "", "nobody here but us chickens");
+            return  nullReview;
         }
     }
 
@@ -35,3 +38,4 @@ public class ReviewStorage {
         reviewRepo.save(reviewToAdd);
     }
 }
+
