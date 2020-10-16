@@ -2,9 +2,12 @@ package org.wecancodeit.reviews.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.wecancodeit.reviews.storage.CategoryStorage;
 import org.wecancodeit.reviews.storage.ReviewStorage;
+
+import javax.persistence.Id;
 
 @Controller
 public class CategoryController {
@@ -20,8 +23,8 @@ public class CategoryController {
         return "home";
     }
     @RequestMapping("/category/{id}")
-    public String displayTypePage(Model model) {
-        model.addAttribute("reviews", reviewStorage.retrieveAllReviews());
+    public String displayCategoryPage(Model model, @PathVariable long id) {
+        model.addAttribute("reviews", reviewStorage.retrieveReviewById(id));
         return "category";
     }
 }
