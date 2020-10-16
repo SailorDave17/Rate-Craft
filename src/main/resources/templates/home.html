@@ -34,10 +34,10 @@
             <h1>RateCraft</h1>
             <div class="right-side-content">
                 
-                <form action="#" class="review-form">
+                <form action="reviews.html" method="post" class="review-form">
                     <h3 class="review-form-header">Submit a Review</h3>
                     <label for="boat-type">Boat Type</label>
-                    <select name="btype" id="boat-type-id">
+                    <select name="bcategory" id="boat-category-id">
                         <option value="catamaran">Catamaran</option>
                         <option value="dinghy">Dinghy</option>
                         <option value="motorsailer">Motorsailer</option>
@@ -53,6 +53,7 @@
                     <input type="text" id="bmakename" name="bmakename">
                     <label for="boat-model">Boat Model</label>
                     <input type="text" id="bmodelname" name="bmodelname">
+                    <input type="text" id="description" name = "description">
                     <button type="submit">Go</button>
                 </form>
             </div>
