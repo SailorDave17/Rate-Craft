@@ -19,8 +19,11 @@
     </header>
     <div class="main">
         <div class="reviews">
+            <h2 th:text = "${category.name} + ' reviews'">Reviews for Catamaran</h2>
             <ul>
-                <li th:each = "${reviews}">Chrysler Man'o'war</li>
+                <li th:each = "review: ${category.reviews}">
+                    <a th:text = "${review.manufacturer} + ' ' + ${review.modelName}" th:href="'/review/' + ${review.id}">Chrysler Man'o'war</a>
+                </li>
             </ul>
         </div>
 <!--        <div class="photostack">-->

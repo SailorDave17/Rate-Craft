@@ -24,7 +24,7 @@ public class CategoryController {
     }
     @RequestMapping("/category/{id}")
     public String displayCategoryPage(Model model, @PathVariable long id) {
-        model.addAttribute("reviews", reviewStorage.retrieveReviewById(id));
+        model.addAttribute("category", categoryStorage.retrieveCategoryById(id));
         return "category";
     }
 }

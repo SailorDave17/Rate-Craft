@@ -24,7 +24,9 @@ public class Review {
         this.modelName = modelName;
         this.description = description;
     }
-
+public long getId() {
+        return id;
+}
     public Category getCategory() { return category; }
     public String getManufacturer(){
         return manufacturer;
