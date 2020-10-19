@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.wecancodeit.reviews.models.Review;
 import org.wecancodeit.reviews.storage.CategoryStorage;
 import org.wecancodeit.reviews.storage.ReviewStorage;
 
@@ -32,8 +33,9 @@ public class CategoryController {
 
     @PostMapping("/category")
     public String createCategoryAndReview(@RequestParam String bcategory, @RequestParam String bmakename, @RequestParam String bmodelname, @RequestParam String description){
-//        reviewCategory categoryToAdd = new ReviewCatagory(categoryName);
-//        catagoryStorage.addCategory(categoryToAdd);
+       Review newReview = new Review(categoryStorage.retrieveCategoryById(Long.parseLong(bcategory)), bmakename, bmodelname, description);
+//        categoryStorage.addCategory(categoryToAdd);
+        reviewStorage.addReview(Review newReview);
 
 
     }
