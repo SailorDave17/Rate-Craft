@@ -37,11 +37,11 @@
                 <form action="reviews.html" method="post" class="review-form">
                     <h3 class="review-form-header">Submit a Review</h3>
                     <label for="boat-type">Boat Type</label>
-                    <select name="bcategory" id="boat-category-id">
-                        <option value="catamaran">Catamaran</option>
-                        <option value="dinghy">Dinghy</option>
-                        <option value="motorsailer">Motorsailer</option>
-                        <option value="historic">Historic</option>
+                    <select th:each="category: ${categories}" name="bcategory" id="boat-category-id">
+                        <option value="${cate">Catamaran</option>
+<!--                        <option value="dinghy">Dinghy</option>-->
+<!--                        <option value="motorsailer">Motorsailer</option>-->
+<!--                        <option value="historic">Historic</option>-->
                     </select>
                     <label for="boat-usage">Boat Usage</label><select name="btype" id="boat-type-id">
                         <option value="cruiser">Cruiser</option>
