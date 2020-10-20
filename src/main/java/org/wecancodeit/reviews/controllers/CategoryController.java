@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 import org.wecancodeit.reviews.models.Review;
 import org.wecancodeit.reviews.storage.CategoryStorage;
 import org.wecancodeit.reviews.storage.ReviewStorage;
@@ -15,7 +16,7 @@ import javax.persistence.Id;
 @Controller
 public class CategoryController {
 
-    private CategoryStorage categoryStorage;
+    protected CategoryStorage categoryStorage;
     private ReviewStorage reviewStorage;
 
     public CategoryController(CategoryStorage categoryStorage) { this.categoryStorage = categoryStorage; }
@@ -31,12 +32,5 @@ public class CategoryController {
         return "category";
     }
 
-    @PostMapping("/category")
-    public String createCategoryAndReview(@RequestParam String bcategory, @RequestParam String bmakename, @RequestParam String bmodelname, @RequestParam String description){
-       Review newReview = new Review(categoryStorage.retrieveCategoryById(Long.parseLong(bcategory)), bmakename, bmodelname, description);
-//        categoryStorage.addCategory(categoryToAdd);
-        reviewStorage.addReview(Review newReview);
 
-
-    }
 }
