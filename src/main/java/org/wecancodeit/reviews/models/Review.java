@@ -50,4 +50,8 @@ public class Review {
     public String getDescription() {
         return description;
     }
+
+    public void setId(Long id){
+        this.id = id;
+    }
 }

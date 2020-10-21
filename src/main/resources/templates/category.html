@@ -23,8 +23,10 @@
             <ul>
                 <li th:each = "review: ${category.reviews}">
                     <a th:text = "${review.manufacturer} + ' ' + ${review.modelName}" th:href="'/review/' + ${review.id}">Chrysler Man'o'war</a>
+                    <a th:href="'/revieweditor/' + ${review.id}">IMG</a>
                 </li>
             </ul>
+
         </div>
 <!--        <div class="photostack">-->
 <!--            <ul>-->

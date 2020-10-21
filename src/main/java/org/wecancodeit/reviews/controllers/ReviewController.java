@@ -1,5 +1,6 @@
 package org.wecancodeit.reviews.controllers;
 
+import org.dom4j.rule.Mode;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -38,8 +39,22 @@ public class ReviewController {
 //        categoryStorage.addCategory(categoryToAdd);
         reviewStorage.addReview(newReview);
         return "redirect:/";
+    }
 
+    @RequestMapping("/revieweditor/{id}")
+    public String showSingleReviewEditor(Model model, @PathVariable long id){
+        model.addAttribute("review", reviewStorage.retrieveReviewById(id));
+        model.addAttribute("categories", categoryStorage.retrieveAllCategories());
+        return "revieweditor";
+    }
 
+    @PostMapping("/editreview/{id}")
+    public String editReview(@RequestParam long bcategory, @RequestParam String bmakename, @RequestParam String bmodelname, @RequestParam String description, @RequestParam Long id){
+        Category selectedCategory = categoryStorage.retrieveCategoryById(bcategory);
+        Review editedReview = new Review(selectedCategory, bmakename, bmodelname, description);
+        editedReview.setId(id);
+        reviewStorage.updateReview(editedReview);
+        return "redirect:/";
     }
 
 }

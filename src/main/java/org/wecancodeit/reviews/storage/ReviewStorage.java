@@ -11,11 +11,9 @@ public class ReviewStorage {
 
     private ReviewRepository reviewRepo;
 
-
     public ReviewStorage(ReviewRepository reviewRepo){
         this.reviewRepo = reviewRepo;
     }
-
 
     public Iterable<Review> retrieveAllReviews() {
         return reviewRepo.findAll();
@@ -36,6 +34,10 @@ public class ReviewStorage {
 
     public void addReview(Review reviewToAdd){
         reviewRepo.save(reviewToAdd);
+    }
+
+    public void updateReview(Review editedReview) {
+        reviewRepo.save(editedReview);
     }
 }
 
