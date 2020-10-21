@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 
 <head>
@@ -13,7 +13,7 @@
 
 <body>
     <header>
-        <h1>Beach Cats</h1>
+        <h1 th:text="${review.name}">ReviewTitle</h1>
 
         <div class="home-button">
             <a href="../../index.html"><img src="../../img/home.png" alt="Home Button"></a>
@@ -21,18 +21,11 @@
     </header>
     <main>
         <div class="review">
-            <div class="craft-score">
-                <ul>
-                    <li>Speed: </li>
-                    <li>Comfort: </li>
-                    <li>Multi-day trip suitability: </li>
-                    <li>Cool-factor: </li>
-                    <li>Price: </li>
-                    <li>Practicality: </li>
-                </ul>
-            </div>
+
+            <h3 th:text="${review.manufacturer}">BoatMake</h3>
+            <h3 th:text="${review.modelName}">ModelName</h3>
             <div class="review-body">
-                <p>Ut nec convallis justo. Donec a nisl urna. Donec consectetur elementum ex porta egestas. Donec tristique purus quis commodo luctus. Praesent ultrices eros sit amet felis eleifend, porta consequat massa consequat. Mauris sit amet posuere
+                <p th:text="${review.description}">Ut nec convallis justo. Donec a nisl urna. Donec consectetur elementum ex porta egestas. Donec tristique purus quis commodo luctus. Praesent ultrices eros sit amet felis eleifend, porta consequat massa consequat. Mauris sit amet posuere
                     tellus. Vivamus convallis, ex in posuere aliquam, felis sapien vulputate enim, eu faucibus eros sem et neque. Duis in erat id velit pellentesque aliquet feugiat vitae enim. Sed interdum est lorem. Vestibulum aliquet nulla nisl, ac
                     tempus ipsum accumsan congue.
                 </p>

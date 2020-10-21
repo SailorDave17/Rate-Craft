@@ -36,23 +36,16 @@
                 
                 <form action="/review" method="post" class="review-form">
                     <h3 class="review-form-header">Submit a Review</h3>
-                    <label for="boat-type">Boat Type</label>
-                    <select name="bcategory" id="boat-category-id">
+                    <label for="boat-category-id">Boat Type</label>
+                    <select id="boat-category-id" name="bcategory">
                         <option th:each="category: ${categories}" th:text="${category.name}" th:value="${category.id}">Catamaran</option>
-<!--                        <option value="dinghy">Dinghy</option>-->
-<!--                        <option value="motorsailer">Motorsailer</option>-->
-<!--                        <option value="historic">Historic</option>-->
                     </select>
-                    <label for="boat-usage">Boat Usage</label><select name="btype" id="boat-type-id">
-                        <option value="cruiser">Cruiser</option>
-                        <option value="daysailor">Daysailor</option>
-                        <option value="racer">Racer</option>
-                        <option value="seagoing">Seagoing</option>
-                    </select>
-                    <label for="boat-make">Make</label>
+
+                    <label for="bmakename">Make</label>
                     <input type="text" id="bmakename" name="bmakename">
-                    <label for="boat-model">Boat Model</label>
+                    <label for="bmodelname">Boat Model</label>
                     <input type="text" id="bmodelname" name="bmodelname">
+                    <label for="description">Description</label>
                     <input type="text" id="description" name = "description">
                     <button type="submit">Go</button>
                 </form>
