@@ -39,5 +39,9 @@ public class ReviewStorage {
     public void updateReview(Review editedReview) {
         reviewRepo.save(editedReview);
     }
+
+    public void deleteReview(Long id) {
+        reviewRepo.delete(retrieveReviewById(id));
+    }
 }
 

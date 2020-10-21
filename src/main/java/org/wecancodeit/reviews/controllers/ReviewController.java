@@ -57,4 +57,10 @@ public class ReviewController {
         return "redirect:/";
     }
 
+    @RequestMapping("/deletereview/{id}")
+    public String deleteReview(@PathVariable Long id){
+        reviewStorage.deleteReview(id);
+        return "redirect:/";
+    }
+
 }

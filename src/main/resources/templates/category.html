@@ -23,7 +23,8 @@
             <ul>
                 <li th:each = "review: ${category.reviews}">
                     <a th:text = "${review.manufacturer} + ' ' + ${review.modelName}" th:href="'/review/' + ${review.id}">Chrysler Man'o'war</a>
-                    <a th:href="'/revieweditor/' + ${review.id}">IMG</a>
+                    <a th:href="'/revieweditor/' + ${review.id}">Edit</a>
+                    <a th:href="'/deletereview/' + ${review.id}">Delete</a>
                 </li>
             </ul>
 
