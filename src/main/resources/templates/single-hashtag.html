@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catamaran</title>
+    <link rel="stylesheet" href="../../css/category-layout.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="icon" href="../../img/ship-icon.png">
+</head>
+
+<body>
+    <header>
+        <h1>Catamaran</h1>
+        <div class="home-button">
+            <a href="/"><img src="../../img/home.png" alt="Home Button"></a>
+        </div>
+    </header>
+    <div class="main">
+        <div class="reviews">
+            <h2 th:text = "'Reviews for #' + ${hashtag.name}">Reviews for #hashtag</h2>
+            <ul>
+                <li th:each = "review: ${hashtag.reviews}">
+                    <a th:text = "${review.manufacturer} + ' ' + ${review.modelName}" th:href="'/review/' + ${review.id}">Hashtag tweeter'o'war</a>
+                    <a th:href="'/revieweditor/' + ${review.id}">Edit</a>
+                    <a th:href="'/deletereview/' + ${review.id}">Delete</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,9 +1,7 @@
 package org.wecancodeit.reviews.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 public class Review {
@@ -20,6 +18,8 @@ public class Review {
     private String modelName;
     private String description;
     private String name;
+    @ManyToMany (mappedBy = "associatedReviews")
+    private Collection<Hashtag> associatedHashtags;
 
     public Review(Category category, String manufacturer, String modelName, String description) {
         this.category = category;
