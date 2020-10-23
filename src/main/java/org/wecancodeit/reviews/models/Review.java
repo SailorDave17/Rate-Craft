@@ -1,8 +1,12 @@
 package org.wecancodeit.reviews.models;
+
 import org.wecancodeit.reviews.storage.HashtagStorage;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 
 @Entity
@@ -22,7 +26,7 @@ public class Review {
     private String description;
     private String name;
     @ManyToMany(mappedBy = "associatedReviews")
-    private Collection<Hashtag> associatedHashtags;
+    private Set<Hashtag> associatedHashtags = new HashSet<>();
 
     public Review(Category category, String manufacturer, String modelName, String description) {
         this.category = category;
@@ -56,8 +60,25 @@ public class Review {
         return description;
     }
 
-    public Collection<Hashtag> getAssociatedHashtags() {
+    public Set<Hashtag> getAssociatedHashtags() {
         return associatedHashtags;
+    }
+
+    public void addHashtag(Hashtag hashtag){
+        this.associatedHashtags.add(hashtag);
+        hashtag.getReviews().add(this);
+    }
+
+    public void removeHashtag(Hashtag hashtag){
+        this.associatedHashtags.remove(hashtag);
+        hashtag.getReviews().remove(this);
+    }
+
+    @PreRemove
+    public void unlinkHashtagsFromReview() {
+        for (Hashtag hashtag : this.associatedHashtags) {
+            this.removeHashtag(hashtag);
+        }
     }
 
     public void setId(Long id) {

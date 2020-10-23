@@ -41,9 +41,9 @@ public class HashtagStorage {
 //        return hashtagToAdd;
 //    }
 
-    public void retrieveOrCreateHashtagByName(String name, Review review){
+    public void retrieveOrCreateHashtagByName(String name, Review review) {
         Optional<Hashtag> retrievedHashtagOptional = Optional.ofNullable(hashtagRepo.findHashtagByName(name));
-        if (retrievedHashtagOptional.isPresent()){
+        if (retrievedHashtagOptional.isPresent()) {
             Hashtag hashtagToStore = retrievedHashtagOptional.get();
             hashtagToStore.addReview(review);
             hashtagRepo.save(hashtagToStore);
