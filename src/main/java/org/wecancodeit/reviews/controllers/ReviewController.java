@@ -8,9 +8,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.wecancodeit.reviews.models.Category;
+import org.wecancodeit.reviews.models.Hashtag;
 import org.wecancodeit.reviews.models.Review;
 import org.wecancodeit.reviews.storage.CategoryStorage;
+import org.wecancodeit.reviews.storage.HashtagStorage;
 import org.wecancodeit.reviews.storage.ReviewStorage;
+
+import javax.swing.text.html.Option;
+import java.util.Optional;
 
 
 @Controller
@@ -18,10 +23,12 @@ public class ReviewController {
 
     private ReviewStorage reviewStorage;
     private CategoryStorage categoryStorage;
+    private HashtagStorage hashtagStorage;
 
-    public ReviewController(ReviewStorage reviewStorage, CategoryStorage categoryStorage) {
+    public ReviewController(ReviewStorage reviewStorage, CategoryStorage categoryStorage, HashtagStorage hashtagStorage) {
         this.categoryStorage = categoryStorage;
         this.reviewStorage = reviewStorage;
+        this.hashtagStorage = hashtagStorage;
     }
 
     @RequestMapping("review/{id}")
@@ -49,12 +56,13 @@ public class ReviewController {
     }
 
     @PostMapping("/editreview/{id}")
-    public String editReview(@RequestParam long bcategory, @RequestParam String bmakename, @RequestParam String bmodelname, @RequestParam String description, @RequestParam Long id){
+    public String editReview(@RequestParam long bcategory, @RequestParam String bmakename, @RequestParam String bmodelname, @RequestParam String description, @RequestParam Long id, @RequestParam String hashtag){
         Category selectedCategory = categoryStorage.retrieveCategoryById(bcategory);
         Review editedReview = new Review(selectedCategory, bmakename, bmodelname, description);
         editedReview.setId(id);
+        hashtagStorage.retrieveOrCreateHashtagByName(hashtag, editedReview);
         reviewStorage.updateReview(editedReview);
-        return "redirect:/";
+        return "redirect:/category/" + bcategory;
     }
 
     @RequestMapping("/deletereview/{id}")

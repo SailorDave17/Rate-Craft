@@ -1,7 +1,9 @@
 package org.wecancodeit.reviews.models;
+import org.wecancodeit.reviews.storage.HashtagStorage;
 
 import javax.persistence.*;
 import java.util.Collection;
+
 
 @Entity
 public class Review {
@@ -16,9 +18,10 @@ public class Review {
     private Category category;
     private String manufacturer;
     private String modelName;
+    @Lob
     private String description;
     private String name;
-    @ManyToMany (mappedBy = "associatedReviews")
+    @ManyToMany(mappedBy = "associatedReviews")
     private Collection<Hashtag> associatedHashtags;
 
     public Review(Category category, String manufacturer, String modelName, String description) {
@@ -28,9 +31,11 @@ public class Review {
         this.description = description;
         this.name = manufacturer + " " + modelName;
     }
-    public String getName(){
+
+    public String getName() {
         return name;
     }
+
     public long getId() {
         return id;
     }
@@ -51,7 +56,18 @@ public class Review {
         return description;
     }
 
-    public void setId(Long id){
+    public Collection<Hashtag> getAssociatedHashtags() {
+        return associatedHashtags;
+    }
+
+    public void setId(Long id) {
         this.id = id;
     }
+
+//    public void associateHashtag(Hashtag hashtag) {
+//        associatedHashtags.add(hashtag);
+//    }
+
 }
+
+

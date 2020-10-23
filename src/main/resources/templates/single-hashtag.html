@@ -12,7 +12,7 @@
 
 <body>
     <header>
-        <h1>Catamaran</h1>
+        <h1 th:text = "'#' + ${hashtag.name}">#Hashtag</h1>
         <div class="home-button">
             <a href="/"><img src="../../img/home.png" alt="Home Button"></a>
         </div>
@@ -23,8 +23,8 @@
             <ul>
                 <li th:each = "review: ${hashtag.reviews}">
                     <a th:text = "${review.manufacturer} + ' ' + ${review.modelName}" th:href="'/review/' + ${review.id}">Hashtag tweeter'o'war</a>
-                    <a th:href="'/revieweditor/' + ${review.id}">Edit</a>
-                    <a th:href="'/deletereview/' + ${review.id}">Delete</a>
+<!--                    <a th:href="'/revieweditor/' + ${review.id}">Edit</a>-->
+<!--                    <a th:href="'/deletereview/' + ${review.id}">Delete</a>-->
                 </li>
             </ul>
         </div>

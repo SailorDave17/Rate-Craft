@@ -12,43 +12,53 @@
 </head>
 
 <body>
-    <header>
-        <h1 th:text="${review.name}">ReviewTitle</h1>
+<header>
+    <h1 th:text="${review.name}">ReviewTitle</h1>
 
-        <div class="home-button">
-            <a href="/"><img src="../../img/home.png" alt="Home Button"></a>
+    <div class="home-button">
+        <a href="/"><img src="../../img/home.png" alt="Home Button"></a>
+    </div>
+</header>
+<main>
+    <div class="review">
+
+        <h3 th:text="${review.manufacturer}">BoatMake</h3>
+        <h3 th:text="${review.modelName}">ModelName</h3>
+        <div class="review-body">
+            <p th:text="${review.description}">Description text goes here.
+            </p>
+
+            <form th:action="'/editreview/' + ${review.id}" method="post" class="edit-review-form">
+                <h3 class="review-form-header">Make Changes To Your Review</h3>
+                <label for="boat-category-id">Boat Type</label>
+                <input type="hidden" name="id" th:value="${review.id}">
+                <select id="boat-category-id" name="bcategory">
+                    <option th:value="${review.category.id}" th:text="${review.category.name}" selected=""></option>
+                    <option th:each="category: ${categories}" th:text="${category.name}" th:value="${category.id}">
+                        Category
+                    </option>
+                </select>
+
+                <label for="bmakename">Make</label>
+                <input type="text" id="bmakename" name="bmakename" th:value="${review.manufacturer}">
+                <label for="bmodelname">Boat Model</label>
+                <input type="text" id="bmodelname" name="bmodelname" th:value="${review.modelName}">
+                <label for="description">Description</label>
+                <input type="text" id="description" name="description" th:value="${review.description}">
+                <label for="hashtag">Add a hashtag (don't include the # symbol): #
+                    <ul class="hashtag-cloud">
+                        <li th:each = "hashtag: ${review.associatedHashtags}">
+                            <a th:href="'/hashtags/' + ${hashtag.id}" th:text = "'#' + ${hashtag.name}">#hashtag</a>
+                        </li>
+                    </ul>
+                </label>
+                <input type="text" id="hashtag" name="hashtag">
+                <button type="submit">Update</button>
+            </form>
         </div>
-    </header>
-    <main>
-        <div class="review">
+    </div>
 
-            <h3 th:text="${review.manufacturer}">BoatMake</h3>
-            <h3 th:text="${review.modelName}">ModelName</h3>
-            <div class="review-body">
-                <p th:text="${review.description}">Description text goes here.
-                </p>
-
-                <form th:action="'/editreview/' + ${review.id}" method="post" class="edit-review-form">
-                    <h3 class="review-form-header">Make Changes To Your Review</h3>
-                    <label for="boat-category-id">Boat Type</label>
-                    <input type="hidden" name="id" th:value="${review.id}">
-                    <select id="boat-category-id" name="bcategory">
-                        <option th:value="${review.category.id}" th:text="${review.category.name}" selected=""></option>
-                        <option th:each="category: ${categories}" th:text="${category.name}" th:value="${category.id}">Category</option>
-                    </select>
-
-                    <label for="bmakename">Make</label>
-                    <input type="text" id="bmakename" name="bmakename" th:value="${review.manufacturer}">
-                    <label for="bmodelname">Boat Model</label>
-                    <input type="text" id="bmodelname" name="bmodelname" th:value="${review.modelName}">
-                    <label for="description">Description</label>
-                    <input type="text" id="description" name = "description" th:value="${review.description}">
-                    <button type="submit">Update</button>
-                </form>
-            </div>
-        </div>
-
-    </main>
+</main>
 
 </body>
 

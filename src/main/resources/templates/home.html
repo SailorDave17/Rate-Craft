@@ -21,10 +21,9 @@
 
                 <div class="hashtag-cloud">
                     <ul>
-                        <li><a href="./hashtags/cruisers.html">#cruisers</a></li>
-                        <li><a href="./hashtags/daysailors.html">#daysailors</a></li>
-                        <li><a href="./hashtags/racers.html">#racers</a></li>
-                        <li><a href="./hashtags/seagoing.html">#seagoing</a></li>
+                        <li th:each = "hashtag: ${hashtags}">
+                            <a th:text = "'#' + ${hashtag.name}" th:href="'/hashtags/' + ${hashtag.id}">#cruisers</a>
+                        </li>
                     </ul>
 
                 </div>

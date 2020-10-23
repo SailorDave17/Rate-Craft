@@ -28,6 +28,13 @@
                 <p th:text="${review.description}">Description text goes here.
                 </p>
             </div>
+            <div class="hashtags">
+                <ul class="hashtag-cloud">
+                    <li th:each = "hashtag: ${review.associatedHashtags}">
+                        <a th:text = "'#' + ${hashtag.name}" th:href="'/hashtags/' + ${hashtag.id}">#placeholder</a>
+                    </li>
+                </ul>
+            </div>
         </div>
 
     </main>
