@@ -22,12 +22,7 @@ public class HashtagStorage {
 
     public Hashtag retrieveHashtagById(Long id) {
         Optional<Hashtag> retrievedHashtagOptional = hashtagRepo.findById(id);
-        if (retrievedHashtagOptional.isPresent()) {
-            Hashtag retrievedHashtag = retrievedHashtagOptional.get();
-            return retrievedHashtag;
-        } else {
-            return null;
-        }
+        return retrievedHashtagOptional.orElse(null);
     }
 
 //    public Hashtag addHashtag(String inputHashtag) {
@@ -43,14 +38,14 @@ public class HashtagStorage {
 
     public void retrieveOrCreateHashtagByName(String name, Review review) {
         Optional<Hashtag> retrievedHashtagOptional = Optional.ofNullable(hashtagRepo.findHashtagByName(name));
+        Hashtag hashtagToStore;
         if (retrievedHashtagOptional.isPresent()) {
-            Hashtag hashtagToStore = retrievedHashtagOptional.get();
+            hashtagToStore = retrievedHashtagOptional.get();
             hashtagToStore.addReview(review);
-            hashtagRepo.save(hashtagToStore);
         } else {
-            Hashtag hashtagToStore = new Hashtag(name, review);
-            hashtagRepo.save(hashtagToStore);
+            hashtagToStore = new Hashtag(name, review);
         }
+        hashtagRepo.save(hashtagToStore);
     }
 
 }
